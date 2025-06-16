@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.2.xsd">
+
+    <changeSet id="7" author="katerevinskaya">
+        <createIndex tableName="hotels" indexName="idx_hotels_brand">
+            <column name="brand"/>
+        </createIndex>
+
+        <createIndex tableName="addresses" indexName="idx_addresses_city">
+            <column name="city"/>
+        </createIndex>
+
+        <createIndex tableName="addresses" indexName="idx_addresses_country">
+            <column name="country"/>
+        </createIndex>
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.2.xsd">
+
+
+    <changeSet id="1" author="katerevinskaya">
+        <createTable tableName="addresses">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="house_number" type="varchar(20)"/>
+            <column name="street" type="varchar(255)"/>
+            <column name="city" type="varchar(100)"/>
+            <column name="country" type="varchar(100)"/>
+            <column name="post_code" type="varchar(20)"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="2" author="katerevinskaya">
+        <createTable tableName="contacts">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="phone" type="varchar(50)"/>
+            <column name="email" type="varchar(100)"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="3" author="katerevinskaya">
+        <createTable tableName="arrival_times">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="check_in" type="TIME"/>
+            <column name="check_out" type="TIME"/>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

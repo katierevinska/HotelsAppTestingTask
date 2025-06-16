@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.2.xsd">
+
+    <changeSet id="6" author="katerevinskaya">
+        <createTable tableName="hotel_amenity">
+            <column name="hotel_id" type="bigint">
+                <constraints nullable="false"
+                             foreignKeyName="fk_hotel_amenity_hotel"
+                             referencedTableName="hotels"
+                             referencedColumnNames="id"/>
+            </column>
+            <column name="amenity_id" type="bigint">
+                <constraints nullable="false"
+                             foreignKeyName="fk_hotel_amenity_amenity"
+                             referencedTableName="amenities"
+                             referencedColumnNames="id"/>
+            </column>
+        </createTable>
+        <addPrimaryKey tableName="hotel_amenity"
+                       columnNames="hotel_id, amenity_id"
+                       constraintName="pk_hotel_amenity"/>
+    </changeSet>
+</databaseChangeLog>
