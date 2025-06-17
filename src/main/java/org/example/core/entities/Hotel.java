@@ -1,4 +1,4 @@
-package org.example.entities;
+package org.example.core.entities;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -17,22 +17,21 @@ public class Hotel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @Column(name = "name")
-    private String name;// /search Hotel
+    private String name;
     @Column(name = "description")
     private String description;
     @Column(name = "brand")
-    private String brand;// /search Hotel
+    private String brand;
     @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "address_id")
-    private Address address; //.city /search Hotel
-                     //.country /search Hotel
+    private Address address;
     @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "contacts_id")
     private Contacts contacts;
     @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "arrivalTime_id")
     private ArrivalTime arrivalTime;
-    @ManyToMany(cascade = { CascadeType.PERSIST, CascadeType.MERGE }, fetch = FetchType.EAGER)
+    @ManyToMany(cascade = CascadeType.PERSIST)
     @JoinTable(
             name = "hotel_amenity",
             joinColumns = @JoinColumn(name = "hotel_id"),

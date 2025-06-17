@@ -9,13 +9,11 @@ import java.util.Set;
 @Getter
 public class HotelFullInfoDTO {
     private long id;
-    private String name;// /search Hotel
+    private String name;
     private String description;
-    private String brand;// /search Hotel
-    private AddressDTO address; //.city /search Hotel
-                     //.country /search Hotel
+    private String brand;
+    private AddressDTO address;
     private ContactsDTO contacts;
     private ArrivalTimeDTO arrivalTime;
-    private Set<String> amenities; // /search Hotel
-
+    private Set<String> amenities;
 }

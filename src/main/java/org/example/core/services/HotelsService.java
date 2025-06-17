@@ -1,18 +1,18 @@
-package org.example.services;
+package org.example.core.services;
 
 import lombok.RequiredArgsConstructor;
+import org.example.core.entities.Amenity;
+import org.example.exceptions.ResourceNotFoundException;
+import org.example.core.repositories.HotelRepository;
+import org.example.core.repositories.HotelSpecification;
 import org.example.dto.*;
-import org.example.entities.Amenity;
-import org.example.entities.Hotel;
-import org.example.repositories.HotelRepository;
-import org.example.repositories.HotelSpecification;
+import org.example.core.entities.Hotel;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 
-import javax.persistence.EntityNotFoundException;
 import java.util.*;
 
 @Service
@@ -29,9 +29,10 @@ public class HotelsService {
                 .toList();
     }
 
-    public Optional<HotelFullInfoDTO> findFullById(Long id) {
+    public HotelFullInfoDTO findFullById(Long id) {
         return hotelRepository.findById(id)
-                .map(converter::toHotelFullInfoDTO);
+                .map(converter::toHotelFullInfoDTO)
+                .orElseThrow(() -> new ResourceNotFoundException("Hotel not found with id: " + id));
     }
 
     public List<HotelShortInfoDTO> searchByCriteria(
@@ -81,7 +82,7 @@ public class HotelsService {
     @Transactional
     public void addAmenitiesToHotel(Long hotelId, Set<String> amenityNames) {
         Hotel hotel = hotelRepository.findById(hotelId)
-                .orElseThrow(() -> new EntityNotFoundException("Hotel with id " + hotelId + " not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("Hotel with id " + hotelId + " not found"));
 
         if (amenityNames == null || amenityNames.isEmpty()) {
             return;

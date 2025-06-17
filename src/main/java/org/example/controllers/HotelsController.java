@@ -5,7 +5,7 @@ import org.example.dto.HotelCreateInfoDTO;
 import org.example.dto.HotelFullInfoDTO;
 import org.example.dto.HotelSearchCriteriaDTO;
 import org.example.dto.HotelShortInfoDTO;
-import org.example.services.HotelsService;
+import org.example.core.services.HotelsService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -30,7 +30,7 @@ public class HotelsController {
 
     @GetMapping("/hotels/{id}")
     public ResponseEntity<HotelFullInfoDTO> getHotelById(@PathVariable Long id) {
-        HotelFullInfoDTO hotel = hotelsService.findFullById(id).get();
+        HotelFullInfoDTO hotel = hotelsService.findFullById(id);
         return ResponseEntity.ok(hotel);
     }
 

@@ -1,7 +1,7 @@
-package org.example.services;
+package org.example.core.services;
 
+import org.example.core.entities.*;
 import org.example.dto.*;
-import org.example.entities.*;
 import org.springframework.stereotype.Component;
 
 import java.util.Collections;

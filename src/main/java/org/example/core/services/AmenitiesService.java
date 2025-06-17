@@ -1,8 +1,8 @@
-package org.example.services;
+package org.example.core.services;
 
 import lombok.RequiredArgsConstructor;
-import org.example.entities.Amenity;
-import org.example.repositories.AmenityRepository;
+import org.example.core.entities.Amenity;
+import org.example.core.repositories.AmenityRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

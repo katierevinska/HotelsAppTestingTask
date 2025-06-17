@@ -1,8 +1,7 @@
-package org.example.entities;
+package org.example.core.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -43,6 +42,7 @@ public class Amenity {
 
     public Amenity() {
     }
+
     public Amenity(String name) {
         this.setName(name);
     }

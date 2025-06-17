@@ -1,4 +1,4 @@
-package org.example.entities;
+package org.example.core.entities;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -15,7 +15,7 @@ public class Address {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name = "house_number")
-    private String houseNumber; //9A
+    private String houseNumber;
     @Column(name = "street")
     private String street;
     @Column(name = "city")
@@ -23,7 +23,7 @@ public class Address {
     @Column(name = "country")
     private String country;
     @Column(name = "post_code")
-    private String postCode;// ? "220004"
+    private String postCode;
 
     @Override
     public String toString() {//9 Pobediteley Avenue, Minsk, 220004, Belarus

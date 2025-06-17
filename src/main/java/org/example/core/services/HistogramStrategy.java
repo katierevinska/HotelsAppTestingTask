@@ -1,4 +1,4 @@
-package org.example.services;
+package org.example.core.services;
 
 import org.example.dto.HistogramDTO;
 

@@ -1,7 +1,8 @@
 package org.example.repositories;
 
+import org.example.core.entities.*;
+import org.example.core.repositories.HotelRepository;
 import org.example.dto.HistogramDTO;
-import org.example.entities.*;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;

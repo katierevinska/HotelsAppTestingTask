@@ -1,6 +1,6 @@
-package org.example.repositories;
+package org.example.core.repositories;
 
-import org.example.entities.Hotel;
+import org.example.core.entities.Hotel;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Component;
 

@@ -1,6 +1,6 @@
-package org.example.repositories;
+package org.example.core.repositories;
 
-import org.example.entities.Amenity;
+import org.example.core.entities.Amenity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Set;

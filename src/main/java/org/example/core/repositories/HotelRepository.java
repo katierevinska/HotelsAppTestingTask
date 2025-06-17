@@ -1,7 +1,7 @@
-package org.example.repositories;
+package org.example.core.repositories;
 
 import org.example.dto.HistogramDTO;
-import org.example.entities.Hotel;
+import org.example.core.entities.Hotel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;

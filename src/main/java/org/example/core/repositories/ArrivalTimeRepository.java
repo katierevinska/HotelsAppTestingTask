@@ -1,6 +1,6 @@
-package org.example.repositories;
+package org.example.core.repositories;
 
-import org.example.entities.ArrivalTime;
+import org.example.core.entities.ArrivalTime;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ArrivalTimeRepository extends JpaRepository<ArrivalTime, Long> {
