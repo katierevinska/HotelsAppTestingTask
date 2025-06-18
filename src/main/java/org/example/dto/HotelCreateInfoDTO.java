@@ -1,8 +1,10 @@
 package org.example.dto;
 
+import lombok.Builder;
 import lombok.Getter;
 
 @Getter
+@Builder
 public class HotelCreateInfoDTO {
     private String name;
     private String description;
